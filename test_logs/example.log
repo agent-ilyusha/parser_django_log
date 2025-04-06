@@ -1,0 +1,118 @@
+[2024-03-20 10:15:23,456] INFO [django.server] Watching for file changes with StatReloader
+[2024-03-20 10:15:24,789] DEBUG [django.db.backends] (0.001) SELECT "auth_user"."id", "auth_user"."password" FROM "auth_user" WHERE "auth_user"."username" = 'admin';
+[2024-03-20 10:15:25,123] INFO [django.auth] Successfully authenticated user admin
+[2024-03-20 10:15:26,234] WARNING [django.request] Not Found: /favicon.ico
+[2024-03-20 10:15:27,345] ERROR [django.security] Forbidden (CSRF token missing): /api/users/
+[2024-03-20 10:15:28,567] INFO [django.views] User profile updated successfully
+[2024-03-20 10:15:29,678] DEBUG [django.template] Template "users/profile.html" rendered successfully
+[2024-03-20 10:15:30,789] WARNING [django.security] Invalid password attempt for user "john_doe"
+[2024-03-20 10:15:31,890] CRITICAL [django.core] Database connection failed: Connection refused
+[2024-03-20 10:15:32,901] INFO [django.server] "POST /api/users/ HTTP/1.1" 201 458
+[2024-03-20 10:15:33,012] DEBUG [django.db.backends] (0.002) INSERT INTO "users_profile" ("name", "email") VALUES ('John Doe', 'john@example.com');
+[2024-03-20 10:15:34,123] ERROR [django.request] Internal Server Error: /api/orders/
+Traceback (most recent call last):
+  File "/app/views.py", line 45, in create_order
+    raise ValidationError("Invalid order data")
+django.core.exceptions.ValidationError: Invalid order data
+[2024-03-20 10:15:35,234] INFO [django.auth] User "admin" logged out successfully
+[2024-03-20 10:15:36,345] WARNING [django.db] Database query took longer than 2 seconds to complete
+[2024-03-20 10:15:37,456] INFO [django.server] Starting development server at http://127.0.0.1:8000/
+[2024-03-20 10:15:38,567] DEBUG [django.db.backends] (0.003) SELECT * FROM "products_category";
+[2024-03-20 10:15:39,678] INFO [django.views] Category list retrieved successfully
+[2024-03-20 10:15:40,789] DEBUG [django.template] Template "products/list.html" rendered successfully
+[2024-03-20 10:15:41,890] INFO [django.server] "GET /api/products/ HTTP/1.1" 200 1534
+[2024-03-20 10:15:42,901] DEBUG [django.db.backends] (0.002) SELECT * FROM "products_product" WHERE "category_id" = 1;
+[2024-03-20 10:15:43,012] WARNING [django.security] Rate limit exceeded for IP: 192.168.1.100
+[2024-03-20 10:15:44,123] ERROR [django.request] Bad Request: /api/products/invalid
+[2024-03-20 10:15:45,234] INFO [django.auth] Password reset email sent to user@example.com
+[2024-03-20 10:15:46,345] DEBUG [django.template] Cache miss for key: 'product_list_1'
+[2024-03-20 10:15:47,456] WARNING [django.db] Slow query detected (2.5s): SELECT * FROM "orders_order" WHERE "status" = 'pending';
+[2024-03-20 10:15:48,567] INFO [django.views] New order #12345 created successfully
+[2024-03-20 10:15:49,678] DEBUG [django.db.backends] (0.001) BEGIN TRANSACTION;
+[2024-03-20 10:15:50,789] DEBUG [django.db.backends] (0.002) INSERT INTO "orders_order" ("user_id", "total", "status") VALUES (1, 299.99, 'pending');
+[2024-03-20 10:15:51,890] DEBUG [django.db.backends] (0.001) COMMIT;
+[2024-03-20 10:15:52,901] INFO [django.server] "POST /api/orders/ HTTP/1.1" 201 345
+[2024-03-20 10:15:53,012] WARNING [django.security] Multiple failed login attempts detected for IP: 192.168.1.101
+[2024-03-20 10:15:54,123] ERROR [django.core] Redis connection error: Connection refused
+[2024-03-20 10:15:55,234] INFO [django.auth] User "jane_doe" created successfully
+[2024-03-20 10:15:56,345] DEBUG [django.template] Template "email/welcome.html" rendered successfully
+[2024-03-20 10:15:57,456] INFO [django.server] "GET /static/css/main.css HTTP/1.1" 304 0
+[2024-03-20 10:15:58,567] DEBUG [django.db.backends] (0.004) SELECT * FROM "products_product" WHERE "stock" < 10;
+[2024-03-20 10:15:59,678] WARNING [django.views] Low stock alert: Product ID 123 (5 items remaining)
+[2024-03-20 10:16:00,789] INFO [django.auth] Password changed for user "john_doe"
+[2024-03-20 10:16:01,890] DEBUG [django.db.backends] (0.002) UPDATE "auth_user" SET "password" = 'hashed_password_here' WHERE "id" = 2;
+[2024-03-20 10:16:02,901] ERROR [django.security] Invalid JWT token detected
+[2024-03-20 10:16:03,012] INFO [django.views] Cart updated for user ID 1
+[2024-03-20 10:16:04,123] DEBUG [django.template] Cache hit for key: 'category_list'
+[2024-03-20 10:16:05,234] WARNING [django.db] Database connection pool reaching maximum capacity
+[2024-03-20 10:16:06,345] INFO [django.server] "PUT /api/cart/1 HTTP/1.1" 200 156
+[2024-03-20 10:16:07,456] DEBUG [django.db.backends] (0.003) SELECT * FROM "cart_item" WHERE "user_id" = 1;
+[2024-03-20 10:16:08,567] ERROR [django.request] Payment gateway error: Transaction failed
+Traceback (most recent call last):
+  File "/app/payments/views.py", line 78, in process_payment
+    raise PaymentError("Gateway connection timeout")
+payments.exceptions.PaymentError: Gateway connection timeout
+[2024-03-20 10:16:09,678] INFO [django.auth] User session expired
+[2024-03-20 10:16:10,789] DEBUG [django.template] Template "errors/payment_failed.html" rendered successfully
+[2024-03-20 10:16:11,890] WARNING [django.security] Suspicious file upload detected: malware.exe
+[2024-03-20 10:16:12,901] INFO [django.views] Product review submitted by user ID 3
+[2024-03-20 10:16:13,012] DEBUG [django.db.backends] (0.002) INSERT INTO "products_review" ("product_id", "user_id", "rating", "comment") VALUES (45, 3, 5, 'Great product!');
+[2024-03-20 10:16:14,123] ERROR [django.core] Celery task failure: order_confirmation_email
+[2024-03-20 10:16:15,234] INFO [django.auth] OAuth2 authentication successful for provider: google
+[2024-03-20 10:16:16,345] DEBUG [django.template] Template "social/google_callback.html" rendered successfully
+[2024-03-20 10:16:17,456] WARNING [django.db] Deadlock detected, transaction rolled back
+[2024-03-20 10:16:18,567] INFO [django.server] "GET /api/products/search?q=laptop HTTP/1.1" 200 2345
+[2024-03-20 10:16:19,678] DEBUG [django.db.backends] (0.005) SELECT * FROM "products_product" WHERE "name" ILIKE '%laptop%';
+[2024-03-20 10:16:20,789] ERROR [django.security] XSS attempt detected in user input
+[2024-03-20 10:16:21,890] INFO [django.views] Newsletter subscription confirmed for user@example.com
+[2024-03-20 10:16:22,901] DEBUG [django.template] Template "newsletter/confirmation.html" rendered successfully
+[2024-03-20 10:16:23,012] WARNING [django.request] API rate limit warning: 90% of quota used
+[2024-03-20 10:16:24,123] INFO [django.server] "POST /api/newsletter/subscribe HTTP/1.1" 201 89
+[2024-03-20 10:16:25,234] DEBUG [django.db.backends] (0.001) SELECT COUNT(*) FROM "newsletter_subscriber";
+[2024-03-20 10:16:26,345] ERROR [django.core] Email sending failed: SMTP connection error
+[2024-03-20 10:16:27,456] INFO [django.auth] Two-factor authentication enabled for user "admin"
+[2024-03-20 10:16:28,567] DEBUG [django.template] Template "auth/2fa_setup.html" rendered successfully
+[2024-03-20 10:16:29,678] WARNING [django.security] Brute force attack detected on login endpoint
+[2024-03-20 10:16:30,789] INFO [django.views] User preferences updated
+[2024-03-20 10:16:31,890] DEBUG [django.db.backends] (0.002) UPDATE "users_preferences" SET "theme" = 'dark' WHERE "user_id" = 1;
+[2024-03-20 10:16:32,901] ERROR [django.request] Service Unavailable: /api/external/weather
+[2024-03-20 10:16:33,012] INFO [django.auth] Password reset link clicked for user ID 5
+[2024-03-20 10:16:34,123] DEBUG [django.template] Template "auth/reset_password.html" rendered successfully
+[2024-03-20 10:16:35,234] WARNING [django.db] Database backup process failed
+[2024-03-20 10:16:36,345] INFO [django.server] "GET /api/user/5/profile HTTP/1.1" 200 567
+[2024-03-20 10:16:37,456] DEBUG [django.db.backends] (0.003) SELECT * FROM "users_profile" WHERE "user_id" = 5;
+[2024-03-20 10:16:38,567] ERROR [django.security] Invalid API key used in request
+[2024-03-20 10:16:39,678] INFO [django.views] Comment posted on blog post #123
+[2024-03-20 10:16:40,789] DEBUG [django.template] Template "blog/comment_section.html" rendered successfully
+[2024-03-20 10:16:41,890] WARNING [django.request] Deprecated API endpoint accessed: /api/v1/users
+[2024-03-20 10:16:42,901] INFO [django.server] "POST /api/blog/123/comments HTTP/1.1" 201 234
+[2024-03-20 10:16:43,012] DEBUG [django.db.backends] (0.002) INSERT INTO "blog_comment" ("post_id", "user_id", "content") VALUES (123, 1, 'Great article!');
+[2024-03-20 10:16:44,123] ERROR [django.core] Cache backend connection failed
+[2024-03-20 10:16:45,234] INFO [django.auth] User "admin" accessed admin panel
+[2024-03-20 10:16:46,345] DEBUG [django.template] Template "admin/index.html" rendered successfully
+[2024-03-20 10:16:47,456] WARNING [django.security] Insecure direct object reference attempt blocked
+[2024-03-20 10:16:48,567] INFO [django.views] File uploaded successfully: report.pdf
+[2024-03-20 10:16:49,678] DEBUG [django.db.backends] (0.004) INSERT INTO "files_upload" ("name", "path", "user_id") VALUES ('report.pdf', '/uploads/2024/03/report.pdf', 1);
+[2024-03-20 10:16:50,789] ERROR [django.request] Method Not Allowed: /api/users/bulk-delete
+[2024-03-20 10:16:51,890] INFO [django.auth] SSO authentication successful
+[2024-03-20 10:16:52,901] DEBUG [django.template] Template "sso/success.html" rendered successfully
+[2024-03-20 10:16:53,012] WARNING [django.db] Table 'sessions' requires optimization
+[2024-03-20 10:16:54,123] INFO [django.server] "DELETE /api/cache/clear HTTP/1.1" 200 45
+[2024-03-20 10:16:55,234] DEBUG [django.db.backends] (0.001) DELETE FROM "django_cache" WHERE "expires" < '2024-03-20 10:16:55';
+[2024-03-20 10:16:56,345] ERROR [django.security] SQL injection attempt detected
+[2024-03-20 10:16:57,456] INFO [django.views] Webhook received from payment provider
+[2024-03-20 10:16:58,567] DEBUG [django.template] Template "webhooks/payment_received.html" rendered successfully
+[2024-03-20 10:16:59,678] WARNING [django.request] Large file upload in progress (150MB)
+[2024-03-20 10:17:00,789] INFO [django.server] "POST /api/webhooks/payment HTTP/1.1" 200 67
+[2024-03-20 10:17:01,890] DEBUG [django.db.backends] (0.003) UPDATE "orders_order" SET "status" = 'paid' WHERE "payment_id" = 'pi_123456';
+[2024-03-20 10:17:02,901] ERROR [django.core] Background task queue full
+[2024-03-20 10:17:03,012] INFO [django.auth] API token generated for user "api_user"
+[2024-03-20 10:17:04,123] DEBUG [django.template] Template "api/token_generated.html" rendered successfully
+[2024-03-20 10:17:05,234] WARNING [django.security] Potential directory traversal attack blocked
+[2024-03-20 10:17:06,345] INFO [django.views] Sitemap generated successfully
+[2024-03-20 10:17:07,456] DEBUG [django.db.backends] (0.006) SELECT * FROM "pages_page" WHERE "is_published" = true;
+[2024-03-20 10:17:08,567] ERROR [django.request] Gateway Timeout: /api/external/shipping
+[2024-03-20 10:17:09,678] INFO [django.auth] User account deactivated: spam_user
+[2024-03-20 10:17:10,789] DEBUG [django.template] Template "users/account_deactivated.html" rendered successfully
+[2024-03-20 10:17:11,890] WARNING [django.db] Database replication lag detected: 5s
+[2024-03-20 10:17:12,901] INFO [django.server] Server shutting down... 
